@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./styles.css";
 import { NewTodoForm } from "./NewTodoForm";
+import { TodoList } from "./TodoList";
 
 export default function App() {
   // State for storing the list of todos
@@ -37,32 +38,13 @@ export default function App() {
   return (
     <div className="container">
       <header className="app-title">Minimal Todo List</header>
-      {/* Pass the addTodo function as a prop */}
       <NewTodoForm addTodo={addTodo} />
 
       <h1 className="header">Your Tasks</h1>
-
-      <ul className="list">
-        {todos.length === 0 && <p className="empty-message">No Todos</p>}
-        {todos.map((todo) => (
-          <li key={todo.id} className="list-item">
-            <label className="todo-label">
-              <input
-                type="checkbox"
-                checked={todo.completed}
-                onChange={(e) => toggleTodo(todo.id, e.target.checked)}
-              />
-              <span>{todo.title}</span>
-            </label>
-            <button
-              onClick={() => deleteTodo(todo.id)}
-              className="btn btn-danger"
-            >
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+      <TodoList 
+      todos={todos} 
+      toggleTodo={toggleTodo}
+      deleteTodo={deleteTodo} />
     </div>
   );
 }
