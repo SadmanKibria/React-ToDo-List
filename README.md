@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Screenshots](#screenshots)
 - [Features](#features)
 - [Dependencies](#dependencies)
 - [Getting Started](#getting-started)
@@ -22,8 +23,9 @@ This project is perfect for demonstrating my understanding of core React concept
 ## Screenshots
 
 1.  **Home Page without Tasks**
-    (screenshot)
+    ![App](./app.png)
 2.  **Home Page with Tasks**
+    ![App with tasks](./app-task.png)
 
 ## Features
 
